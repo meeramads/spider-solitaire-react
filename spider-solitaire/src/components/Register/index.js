@@ -28,12 +28,6 @@ class RegisterFormBase extends Component {
         this.state = { ...INITIAL_STATE };
     }
 
-    const isInvalid =
-        passwordOne !== passwordTwo ||
-        passwordOne === '' ||
-        username === '';
-
-
     handleSubmit = (e) => {
         e.preventDefault();
 
@@ -56,6 +50,12 @@ class RegisterFormBase extends Component {
     }
 
     render(){
+
+        const isInvalid =
+            passwordOne !== passwordTwo ||
+            passwordOne === '' ||
+            username === '';
+
         return(
             <form onSubmit={this.handleSubmit}>
                 <input
@@ -86,7 +86,9 @@ class RegisterFormBase extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <button disabled={this.isInvalid} type="submit">Sign Up</button>
+                <button disabled={this.isInvalid} type="submit">
+                    Sign Up
+                </button>
 
                 {error && <p>{error.message}</p>}
             </form>
