@@ -86,7 +86,7 @@ class RegisterFormBase extends Component {
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <button disabled={this.isInvalid} type="submit">
+                <button disabled={isInvalid} type="submit">
                     Sign Up
                 </button>
 

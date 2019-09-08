@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { RegisterLink } from '../Register';
@@ -50,7 +50,7 @@ class LoginFormBase extends Component {
     render(){
         const { email, password, error } = this.state;
 
-        const isValid = password === '' || email === '';
+        const isInvalid = password === '' || email === '';
 
         return (
             <form onSubmit={this.onSubmit}>
@@ -68,7 +68,7 @@ class LoginFormBase extends Component {
                     type="password"
                     placeholder="Password"
                 />
-                <button disabled={this.isInvalid} type="submit">
+                <button disabled={isInvalid} type="submit">
                     Log In
                 </button>
 
