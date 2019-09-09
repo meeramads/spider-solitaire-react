@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from '../Navbar/index';
 import RegisterPage from '../Register';
 import LoginPage from '../Login';
+import ProfilePage from '../Profile';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
@@ -19,7 +20,7 @@ const App = () => (
                 {/* <Route exact path={ROUTES.LANDING}></Route> */}
                 <Route path={ROUTES.REGISTER} component={RegisterPage} />
                 <Route path={ROUTES.LOGIN} component={LoginPage} />
-                <Route path={ROUTES.PROFILE}></Route>
+                <Route path={ROUTES.PROFILE} component={ProfilePage}/>
             </Switch>
 
         </div>
