@@ -7,7 +7,7 @@ import * as ROUTES from '../../constants/routes';
 
 const RegisterPage = () => (
     <div>
-        <h1>SignUp</h1>
+        <h1>Register</h1>
         <RegisterForm />
     </div>
 );
@@ -50,6 +50,15 @@ class RegisterFormBase extends Component {
     }
 
     render(){
+
+        const {
+            username,
+            email,
+            passwordOne,
+            passwordTwo,
+            highScore,
+            error
+        } = this.state;
 
         const isInvalid =
             passwordOne !== passwordTwo ||
